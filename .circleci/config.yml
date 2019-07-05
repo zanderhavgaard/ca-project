@@ -24,10 +24,10 @@ workflows:
   test_dockerize:
     jobs:
       - test:
-          filter:
+          filters:
             branches:
-              only: feature/*
-      - dockerize:
-          requires:
-            - test
+              only: /feature\/.*/
+      # - dockerize:
+          # requires:
+            # - test
 
