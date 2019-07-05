@@ -16,11 +16,11 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "36:95:7c:54:d5:f8:63:df:96:a9:89:4c:7e:99:c4:ee<Paste>"
+            - "36:95:7c:54:d5:f8:63:df:96:a9:89:4c:7e:99:c4:ee"
       - checkout
       - run: git checkout master
       - run: git merge $CIRCLE_BRANCH
-      - run: git remote show origin
+      # - run: git remote show origin
       - run: git push origin master 
   dockerize:
     machine: true
