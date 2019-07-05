@@ -35,6 +35,9 @@ workflows:
           filters:
             branches:
               only: /feature\/.*/
+      - merge_into_master:
+          requires:
+            - test
       # - dockerize:
           # requires:
             # - test
