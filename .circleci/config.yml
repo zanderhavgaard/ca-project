@@ -16,7 +16,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "f1:95:0e:d0:97:2d:8f:f9:45:fa:88:c9:69:36:18:9b"
+            - "36:95:7c:54:d5:f8:63:df:96:a9:89:4c:7e:99:c4:ee<Paste>"
       - checkout
       - run: git checkout master
       - run: git merge $CIRCLE_BRANCH
