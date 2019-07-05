@@ -7,7 +7,7 @@ jobs:
       - run: 
           name: Unit test
           command: |
-            pip install -r requirements.txt
+            pip install -r requirements.txt --user
             python tests.py
       - store_test_results:
           path: build/test-results
