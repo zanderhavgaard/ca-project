@@ -14,11 +14,14 @@ jobs:
   merge_into_master:
     machine: true
     steps:
+      - add_ssh_key:
+          fingerprints:
+            - "f1:95:0e:d0:97:2d:8f:f9:45:fa:88:c9:69:36:18:9b"
       - checkout
       - run: git checkout master
       - run: git merge $CIRCLE_BRANCH
       - run: git remote show origin
-      - run: git push origin master
+      - run: git push origin master 
   dockerize:
     machine: true
     steps:
