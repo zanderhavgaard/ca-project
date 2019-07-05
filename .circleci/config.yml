@@ -6,7 +6,9 @@ jobs:
       - checkout
       - run: 
           name: Unit test
-          command: python tests.py
+          command: |
+            pip install -r requirements.txt
+            python tests.py
       - store_test_results:
           path: build/test-results
   dockerize:
