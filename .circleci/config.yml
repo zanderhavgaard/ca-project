@@ -25,7 +25,8 @@ workflows:
     jobs:
       - test:
           filter:
-            only: feature/*
+            branches:
+              only: feature/*
       - dockerize:
           requires:
             - test
