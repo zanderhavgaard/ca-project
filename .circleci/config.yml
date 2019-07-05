@@ -14,7 +14,7 @@ jobs:
   merge_into_master:
     machine: true
     steps:
-      - add_ssh_key:
+      - add_ssh_keys:
           fingerprints:
             - "f1:95:0e:d0:97:2d:8f:f9:45:fa:88:c9:69:36:18:9b"
       - checkout
