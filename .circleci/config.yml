@@ -11,6 +11,12 @@ jobs:
             python tests.py
       - store_test_results:
           path: build/test-results
+  merge_into_master:
+    machine: true
+    steps:
+      - checkout
+      - run: git checkout master
+      - run: git merge $CIRCLE_BRANCH 
   dockerize:
     machine: true
     steps:
