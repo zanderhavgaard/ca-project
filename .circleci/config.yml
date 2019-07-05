@@ -23,7 +23,9 @@ workflows:
   version: 2
   test_dockerize:
     jobs:
-      - test
+      - test:
+          filter:
+            only: feature/*
       - dockerize:
           requires:
             - test
