@@ -53,18 +53,19 @@ jobs:
 workflows:
   version: 2
   test_dockerize:
-    jobs:
-      - health_check
-      # - test:
-          # filters:
-            # branches:
-              # only: /feature\/.*/
-      # - merge_into_master:
-          # requires:
-            # - test
-      # - dockerize:
-          # requires:
-            # - merge_into_master
-      # - deploy:
-          # requires:
-            # - dockerize
+      - test:
+          filters:
+            branches:
+              only: /feature\/.*/
+      - merge_into_master:
+          requires:
+            - test
+      - dockerize:
+          requires:
+            - merge_into_master
+      - deploy:
+          requires:
+            - dockerize
+      - health_check:
+          requires:
+            - deploy
