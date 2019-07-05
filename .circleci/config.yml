@@ -41,7 +41,7 @@ workflows:
       - merge_into_master:
           requires:
             - test
-      # - dockerize:
-          # requires:
-            # - test
+			- dockerize:
+					requires:
+						- merge_into_master
 
