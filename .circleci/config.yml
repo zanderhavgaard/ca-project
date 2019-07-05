@@ -16,7 +16,9 @@ jobs:
     steps:
       - checkout
       - run: git checkout master
-      - run: git merge $CIRCLE_BRANCH 
+      - run: git merge $CIRCLE_BRANCH
+      - run: git remote show origin
+      - run: git push origin master
   dockerize:
     machine: true
     steps:
