@@ -44,4 +44,3 @@ workflows:
 			- dockerize:
 					requires:
 						- merge_into_master
-
