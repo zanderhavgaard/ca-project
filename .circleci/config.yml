@@ -1,0 +1,28 @@
+jobs:
+  test:
+    docker:
+      - image: circleci/python:2.7.16
+    steps:
+      - checkout
+      - run: 
+          name: Unit test
+          command: python tests.py
+      - store_test_results:
+          path: build/test-results
+  dockerize:
+    machine: true
+    steps:
+      - checkout
+      - run: docker login -u $DOCKER_LOGIN -p $DOCKER_PASS
+      - run: docker build -t draagvah/codechan:latest .
+      - run: docker push draagvah/codechan:latest
+
+workflows:
+  version: 2
+  setup_test_dockerize:
+    jobs:
+      - test
+      - dockerize:
+          requires:
+            - test
+
