@@ -53,6 +53,7 @@ jobs:
 workflows:
   version: 2
   test_dockerize:
+    jobs:
       - test:
           filters:
             branches:
