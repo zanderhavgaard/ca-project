@@ -41,9 +41,14 @@ jobs:
   health_check:
     machine: true
     steps:
+      - store_artifacts:
+          path: tests
+          destination: prefix
       - run:
           name: Test that site is up
-          command: curl 34.77.17.251:5000
+          command: |
+            mkdir tests
+            curl 34.77.17.251:5000 > tests/site.html
 
 workflows:
   version: 2
