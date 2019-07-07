@@ -1,3 +1,5 @@
+Repo for exercise @ Praqma's CoDe (Continuous Delivery) Academy 2019
+
 # Keystone project
 
 This project is meant for you to make awesome software, with the skills in your Continuous Delivery and DevOps toolbox.
